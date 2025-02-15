@@ -18,8 +18,8 @@ const Header = () => {
     const { auth, setAuth } = useContext(AuthContext);
     // console.log(auth);
 
-    // Các mục bên trái
-    const leftItems = [
+    const allItems = [
+        // Mục bên trái
         {
             label: <Link to={'/'}>Home</Link>,
             key: 'home',
@@ -49,14 +49,12 @@ const Header = () => {
                 },
             ]
             : []),
-    ];
-
-    // Các mục bên phải
-    const rightItems = [
+        // Mục bên phải
         {
             label: auth?.user?.email ? `Welcome ${auth?.user?.email}` : 'Your account',
             key: 'SubMenu',
             icon: <LoginOutlined />,
+            style: { marginLeft: 'auto' }, // Căn phải
             children: [
                 ...(auth.isAuthenticated && auth?.user?.email
                     ? [
@@ -90,7 +88,6 @@ const Header = () => {
                             key: 'profile',
                             icon: <SmileOutlined />,
                         },
-
                     ]
                     : [
                         {
@@ -104,52 +101,31 @@ const Header = () => {
                     ]),
             ],
         },
-
     ];
 
     const [current, setCurrent] = useState('home');
-    const [currentUser, setCurrentUser] = useState('SubMenu');
-    const onClickBook = (e) => {
+    const onClickMenu = (e) => {
         setCurrent(e.key);
     };
-    const onClickLogin = (e) => {
-        setCurrentUser(e.key)
-    }
 
     return (
-        // <Menu
-        //     onClick={onClick}
-        //     selectedKeys={[current]}
-        //     mode="horizontal"
-        //     items={allItems}           
-        // />
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '0 16px',
-                background: '#fff',
-            }}
-        >
-            {/* Phần bên trái */}
+        <div style={{position: "fixed", width: "100%", zIndex: 1}}>
             <Menu
-                onClick={onClickBook}
+                onClick={onClickMenu}
                 selectedKeys={[current]}
                 mode="horizontal"
-                items={leftItems}
-                style={{ flex: 1 }}
-            />
+                items={allItems}
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: '0 16px',
+                    background: 'rgb(226, 236, 251)',
 
-            {/* Phần bên phải */}
-            <Menu
-                onClick={onClickLogin}
-                selectedKeys={[currentUser]}
-                mode="horizontal"
-                items={rightItems}
-                style={{ display: 'flex', gap: '10px' }}
+                }}
             />
         </div>
+
+
     );
 };
 

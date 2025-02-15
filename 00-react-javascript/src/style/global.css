@@ -113,7 +113,20 @@ body
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
+.row-footer .author{
+    display: flex;
+    align-items: center;
+}
+.row-footer .icon-contact{
+    text-align: right;
+}
+.row-footer .icon-contact a{
+    color: #6c757d;
+    font-size: 25px;
+}
+.row-footer .icon-contact a:hover{
+    color: #82A3FF;
+}
 
 /* RESPONSIVE */
 @media (max-width: 1024px){
@@ -137,6 +150,13 @@ body
     .detail-description{
         width: 100%;
     }
+    .row-footer .author{
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .row-footer .icon-contact{
+        text-align: center;
+    }
 }
 @media (max-width: 361px){
     .home-page .book-random{
@@ -151,4 +171,5 @@ body
     .detail-description{
         width: 100%;
     }
+    
 }

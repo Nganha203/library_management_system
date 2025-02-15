@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import { getAccount } from './util/api'
 import { AuthContext } from './component/context/auth.context'
 import { Spin } from 'antd';
+import FooterLayout from './component/playout/footer'
 
 function App() {
     const { setAuth, loading, setLoading } = useContext(AuthContext)
@@ -39,6 +40,7 @@ function App() {
                 <>
                     <Header />
                     <Outlet />
+                    <FooterLayout/>
 
                 </>
             }

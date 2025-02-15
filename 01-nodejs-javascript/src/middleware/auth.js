@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const auth = (req, res, next) => {
 
-    const list = ['/randomBook', '/', '/register', '/login', '/list-book', '/borrow']
+    const list = [ '/', '/register', '/login', '/list-book', '/borrow', '/randomBook']
     if (list.find((item) => '/v1/api' + item === req.originalUrl)) {
         next()
     }
