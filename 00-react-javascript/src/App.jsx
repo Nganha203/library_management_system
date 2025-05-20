@@ -35,14 +35,21 @@ function App() {
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)'
-                }}> <Spin/> </div>
+                }}> <Spin /> </div>
                 :
-                <>
-                    <Header />
-                    <Outlet />
-                    <FooterLayout/>
+                <div className="flex flex-col min-h-screen">
 
-                </>
+                    <div className="flex flex-col min-h-screen">
+                        {/* 2. Header fixed, nên content cần padding-top cho nó xuống dưới header */}
+                        <Header />
+                        {/* 3. Main content: flex-1 để giãn nở, padding-top bằng đúng chiều cao header (vd: 64px) */}
+                        <main className="flex-1 pt-16">
+                            <Outlet />
+                        </main>
+                        {/* 4. Footer “bình thường” nằm cuối flex container */}
+                        <FooterLayout />
+                    </div>
+                </div>
             }
 
         </>

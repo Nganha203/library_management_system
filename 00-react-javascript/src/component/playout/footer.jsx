@@ -1,4 +1,3 @@
-import React from "react";
 import { Layout, Typography, Row, Col, Space } from "antd";
 import { TwitterOutlined, InstagramOutlined, FacebookOutlined, MehOutlined } from "@ant-design/icons";
 
@@ -18,13 +17,13 @@ const FooterLayout = () => {
                     {/* Social Media Icons */}
                     <Col md={8} xs={24} className="icon-contact">
                         <Space size="middle">
-                            <a href="" className="text-body-secondary">
+                            <a className="text-body-secondary">
                                 <TwitterOutlined/>
                             </a>
-                            <a href="" className="text-body-secondary">
+                            <a className="text-body-secondary">
                                 <InstagramOutlined/>
                             </a>
-                            <a href="" className="text-body-secondary">
+                            <a className="text-body-secondary">
                                 <FacebookOutlined/>
                             </a>
                         </Space>

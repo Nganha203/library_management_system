@@ -73,7 +73,6 @@ const HomePage = () => {
         );
         setFilterList(filtered);
     };
-    const listRender = filterList.length > 0 ? filterList : listBook
 
     const responsive = {
         superLargeDesktop: {
