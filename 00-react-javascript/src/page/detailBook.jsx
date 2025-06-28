@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Button, Layout, Tag, notification } from 'antd';
-const { Sider, Content } = Layout;
+import React, { useEffect, useState } from 'react';
+import { Button, Tag, notification } from 'antd';
 import { useParams } from 'react-router-dom';
 import { getOneBook, borrowerBookApi, returnBookApi } from '../util/api';
 import ScrollToStop from '../component/scrollToTop';
@@ -57,8 +56,8 @@ const DetailBook = () => {
                 message: "RETURN BOOK",
                 description: "success"
             })
-            const updatedData = await getOneBook(id); // Gọi lại API để lấy dữ liệu mới
-            setData(updatedData); // Cập nhật state với dữ liệu từ server
+            const updatedData = await getOneBook(id); 
+            setData(updatedData); 
         }
         else {
             notification.error({

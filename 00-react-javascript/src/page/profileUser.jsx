@@ -11,7 +11,7 @@ const ProfileUser = () => {
     useEffect(() => {
         const fetchGetBookApi = async () => {
             const res = await getListBookBorrow()
-            if (!res?.message) {  // message thong bao loi               
+            if (!res?.message) {           
                 setDataSourse(res.data)
             }
             else {
@@ -142,7 +142,7 @@ const ProfileUser = () => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    gap: "10px", // Khoảng cách giữa input và select
+                    gap: "10px", 
                     marginBottom: "30px",
                 }}
             >

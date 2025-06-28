@@ -93,13 +93,10 @@ const HomePage = () => {
         },
     };
 
-    const pageSize = 10; // Số sách trên mỗi trang
+    const pageSize = 10; 
+    const startIndex = (currentPage - 1) * pageSize; 
+    const currentBooks = listBook.slice(startIndex, startIndex + pageSize);
 
-    // Tính toán sách cho trang hiện tại
-    const startIndex = (currentPage - 1) * pageSize; // Vị trí bắt đầu
-    const currentBooks = listBook.slice(startIndex, startIndex + pageSize); // Dữ liệu trang hiện tại
-
-    // Hàm xử lý khi chuyển trang
     const handlePageChange = (page) => {
         setCurrentPage(page);
     };
@@ -115,7 +112,7 @@ const HomePage = () => {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        gap: "10px", // Khoảng cách giữa input và select
+                        gap: "10px",
                         marginBottom: "30px",
                         padding: "0 20px"
                     }}
@@ -228,10 +225,10 @@ const HomePage = () => {
                         </>
                 }
                 <Pagination
-                    current={currentPage} // Trang hiện tại
-                    pageSize={pageSize} // Số sách trên mỗi trang
-                    total={listBook.length} // Tổng số sách
-                    onChange={handlePageChange} // Hàm xử lý khi đổi trang
+                    current={currentPage} 
+                    pageSize={pageSize} 
+                    total={listBook.length} 
+                    onChange={handlePageChange} 
                     style={{ display: "flex", justifyContent: "center", marginBottom: "60px" }}
                 />
                 <ScrollToStop />

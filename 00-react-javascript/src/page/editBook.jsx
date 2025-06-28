@@ -12,7 +12,6 @@ const EditBookPage = () => {
         const fetchGetOneBookApi = async () => {
             const res = await getOneBook(id)
             if (res) {
-                // Đặt giá trị ban đầu cho form
                 form.setFieldsValue({
                     title: res.title,
                     category: res.category,

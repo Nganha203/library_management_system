@@ -19,7 +19,7 @@ const Header = () => {
     // console.log(auth);
 
     const allItems = [
-        // Mục bên trái
+        // Left
         {
             label: <Link to={'/'}>Home</Link>,
             key: 'home',
@@ -49,7 +49,7 @@ const Header = () => {
                 },
             ]
             : []),
-        // Mục bên phải
+        // Right
         {
             label: auth?.user?.email ? `Welcome ${auth?.user?.email}` : 'Your account',
             key: 'SubMenu',

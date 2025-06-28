@@ -13,7 +13,7 @@ const ListDeletedBook = () => {
     useEffect(() => {
         const fetchGetBookApi = async () => {
             const res = await getDeletedBook()
-            if (!res?.message) {  // message thong bao loi               
+            if (!res?.message) {          
                 setDataSourse(res)
             }
             else {
@@ -137,7 +137,7 @@ const ListDeletedBook = () => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    gap: "10px", // Khoảng cách giữa input và select
+                    gap: "10px",
                     marginBottom: "30px",
                 }}
             >
